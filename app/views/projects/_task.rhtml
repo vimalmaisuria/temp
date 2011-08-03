@@ -1,0 +1,10 @@
+<div class="task">
+	<p>
+		<%= fields_for "project[task_attributes][]", task do |task_form| %>
+			<p>
+				Task: <%= task_form.text_field :name %>
+				<%= link_to_function "remove","this.up('.task').remove()" %>
+			</p>
+		<% end %>
+	</p>
+</div>
