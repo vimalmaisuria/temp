@@ -2,11 +2,11 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.xml
   
-  before_filter :authenticate_user!, :except => [:show,:index]
+  # before_filter :authenticate_user!, :except => [:show,:index]
   
   def index
-    @projects = Project.all
-
+    # @projects = Project.search(params).paginate(:per_page=>3, :page=>params[:name])
+    @projects = Project.search(params)
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @projects }

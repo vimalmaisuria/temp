@@ -33,3 +33,10 @@ gem 'sqlite3'
 gem 'devise','1.1.rc0'
 
 gem 'devise_rpx_connectable'
+
+
+gem 'nifty-generators'
+gem 'omniauth'
+gem "mocha", :group => :test
+
+gem 'will_paginate','3.0.pre2'

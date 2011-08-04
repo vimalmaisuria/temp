@@ -1,5 +1,12 @@
 <h1>Listing projects</h1>
 
+<%= form_tag projects_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :name, params[:name] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
 <table>
   <tr>
     <th>Name</th>
@@ -19,5 +26,7 @@
 </table>
 
 <br />
+
+<!-- %= will_paginate @projects % -->
 
 <%= link_to 'New Project', new_project_path %>

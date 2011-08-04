@@ -7,4 +7,20 @@ class Project < ActiveRecord::Base
        tasks.build(attributes)
      end
    end
+   
+   def self.search(params)
+     projects = scoped
+     projects = projects.where("name like ?","%" + params[:name] + "%") if params[:name]
+     projects
+    # if params
+     # where('name LIKE ?',"%#{params}")
+  #  else
+      # scoped
+   # end
+   end
+   
+   def self.scope_builder
+     DynamicDelegator.new(scoped)
+   end
+   
 end
